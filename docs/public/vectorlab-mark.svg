@@ -1,0 +1,23 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 100 100"
+  role="img"
+  aria-labelledby="vectorlab-logo-title"
+>
+  <title id="vectorlab-logo-title">VectorLab logo</title>
+
+  <path
+    fill="#ffca28"
+    d="
+      M 8 44
+      L 20 27
+      L 55 27
+      L 65 56
+      L 80 15
+      L 92 15
+      L 65 90
+      L 45 44
+      Z
+    "
+  />
+</svg>
