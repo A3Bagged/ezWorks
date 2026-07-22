@@ -1,4 +1,6 @@
 <script setup>
+import { withBase } from 'vitepress'
+
 const props = defineProps({
   items: {
     type: Array,
@@ -40,7 +42,7 @@ const props = defineProps({
         <div class="image-card__media">
           <img
             class="image-card__image"
-            :src="item.image"
+            :src="withBase(item.image)"
             :alt="item.alt ?? item.title ?? ''"
             loading="lazy"
           >

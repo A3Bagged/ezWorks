@@ -191,7 +191,7 @@ K1V uses a mix of standard 3D-printer fasteners and a few less common parts. You
   :items="[
     {
       title: 'F695 Bearing',
-      image: '/images/k1v/parts/f695.png',
+      image: '/images/k1v/parts/F695.png',
       alt: 'F695 flanged bearing',
       description: 'A flanged bearing used in live-shaft idler assemblies. Two bearings can be arranged face-to-face to guide a 6 mm belt and help keep it centred.',
       spec: 'F695 · 5 × 13 × 4mm'
