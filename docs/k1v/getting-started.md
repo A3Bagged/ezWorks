@@ -5,7 +5,7 @@ description: Prepare for the K1V build with dimensional checks, recommended prin
 status: new
 ---
 
-# Getting Started <StatusTag label="Beta" color="yellow" />
+# Getting Started <Badge type="warning" text="Beta" />
 
 Before diving into the frame assembly, there are a few things worth sorting out first: making sure your printer can actually produce accurate parts, knowing the hardware you'll be working with, and understanding how to handle supports on the trickier prints.
 

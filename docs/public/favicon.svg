@@ -1,0 +1,68 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+  role="img"
+  aria-labelledby="title"
+>
+  <title id="title">ezWorks EZ monogram</title>
+
+  <defs>
+    <linearGradient
+      id="ez-gradient"
+      x1="12"
+      y1="12"
+      x2="54"
+      y2="52"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop stop-color="#ffca28" />
+      <stop offset="0.55" stop-color="#ffb300" />
+      <stop offset="1" stop-color="#ff8f00" />
+    </linearGradient>
+  </defs>
+
+  <!-- High-contrast tile that works in light and dark browser chrome. -->
+  <rect
+    x="2"
+    y="2"
+    width="60"
+    height="60"
+    rx="14"
+    fill="#17181d"
+  />
+  <rect
+    x="2.75"
+    y="2.75"
+    width="58.5"
+    height="58.5"
+    rx="13.25"
+    fill="none"
+    stroke="#ffffff"
+    stroke-opacity="0.1"
+    stroke-width="1.5"
+  />
+
+  <!-- Offset layer gives the block-built letters a small extruded edge. -->
+  <path
+    d="M12 14H32V22H21V28H30V36H21V42H32V50H12V14ZM34 14H53V22L43 42H53V50H31V42L42 22H34V14Z"
+    fill="#704100"
+    opacity="0.8"
+    transform="translate(1.75 2)"
+  />
+
+  <!-- Geometric E + Z monogram. -->
+  <path
+    d="M12 14H32V22H21V28H30V36H21V42H32V50H12V14ZM34 14H53V22L43 42H53V50H31V42L42 22H34V14Z"
+    fill="url(#ez-gradient)"
+  />
+
+  <!-- Small highlight suggests a machined or printed top surface. -->
+  <path
+    d="M13.5 15.5H30.5M35.5 15.5H51"
+    fill="none"
+    stroke="#fff8dc"
+    stroke-opacity="0.65"
+    stroke-linecap="round"
+    stroke-width="1.5"
+  />
+</svg>

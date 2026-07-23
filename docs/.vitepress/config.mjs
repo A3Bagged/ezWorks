@@ -18,6 +18,18 @@ export default defineConfig({
   lang: 'en-US',
   // Keep local development at `/`, while GitHub Pages builds at `/ezWorks/`.
   base: process.env.DOCS_BASE || '/',
+  // Use each Markdown file's most recent Git commit for its page timestamp.
+  lastUpdated: true,
+  head: [
+    [
+      'link',
+      {
+        rel: 'icon',
+        type: 'image/svg+xml',
+        href: `${process.env.DOCS_BASE || '/'}favicon.svg`
+      }
+    ]
+  ],
 
   markdown: {
     config(md) {
@@ -100,28 +112,18 @@ export default defineConfig({
             : '</div>\n'
         }
       })
+
     }
   },
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    logo: {
-      src: '/vectorlab-mark.svg',
-      alt: 'VectorLab logo'
-    },
 
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Markdown', link: '/examples/markdown-examples' },
       { text: 'K1V', link: '/k1v/' }
     ],
-
-    search: {
-      provider: 'local',
-      options: {
-        disableDetailedView: true
-      }
-    },
 
     sidebar: {
       '/examples/': [
@@ -186,11 +188,45 @@ export default defineConfig({
       ]
     },
 
+    footer: {
+      message: 'Released under the <a href="https://github.com/vuejs/vitepress/blob/main/LICENSE">MIT License</a>.',
+      copyright: 'Copyright © 2019-present <a href="https://github.com/a3bagged">A3 Bagged</a>'
+    },
+
     socialLinks: [
-      {
-        icon: 'github',
-        link: 'https://github.com/A3Bagged/ezWorks'
+      { icon: 'github', link: 'https://github.com/A3Bagged/ezWorks' },
+      { icon: 'discord', link: 'https://discord.gg/cUgSp74aAp' }
+    ],
+
+    editLink: {
+      pattern: 'https://github.com/A3Bagged/ezWorks/edit/main/docs/:path',
+      text: 'Edit this page on GitHub'
+    },
+
+    lastUpdated: {
+      text: 'Last updated',
+      formatOptions: {
+        dateStyle: 'medium',
+        timeStyle: 'short'
       }
-    ]
+    },
+
+    alert: {
+      content: 'This documentation is under active development and may change.',
+      dismissible: true,
+      id: 'ezworks-development-preview-1'
+    },
+
+    logo: {
+      src: '/vectorlab-mark.svg',
+      alt: 'VectorLab logo'
+    },
+
+    search: {
+      provider: 'local',
+      options: {
+        disableDetailedView: true
+      }
+    }
   }
 })

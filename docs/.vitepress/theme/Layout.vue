@@ -5,6 +5,7 @@ import HeroBadges from './components/HeroBadges.vue'
 import NavStatusIndicators from './components/NavStatusIndicators.vue'
 import SidebarSearch from './components/SidebarSearch.vue'
 import ImageLightbox from './components/ImageLightbox.vue'
+import SiteAlert from './components/SiteAlert.vue'
 
 const { frontmatter } = useData()
 </script>
@@ -13,6 +14,7 @@ const { frontmatter } = useData()
   <DefaultTheme.Layout>
     <template #layout-top>
       <NavStatusIndicators />
+      <SiteAlert />
     </template>
 
     <template #home-hero-info-before>

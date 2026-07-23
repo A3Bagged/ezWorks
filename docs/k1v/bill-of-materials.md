@@ -1,9 +1,11 @@
 ---
 title: K1V Bill of Materials
 description: A complete list of the printed parts, hardware, motion components, quantities, and sourcing options required to build the K1V gantry.
+
+editLink: true
 ---
 
-# Bill of Materials <StatusTag label="Beta" color="yellow" />
+# Bill of Materials <Badge type="warning" text="Beta" />
 
 ::: tip Note
 Quantities below are totals for the **full gantry** (both left and right sides included) unless noted otherwise.

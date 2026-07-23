@@ -1,4 +1,4 @@
-# Markdown Extension Examples <StatusTag label="Demo" color="green" />
+# Markdown Extension Examples <Badge type="tip" text="Demo" />
  
 This page demonstrates some of the built-in markdown extensions provided by VitePress.
 

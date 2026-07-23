@@ -12,7 +12,7 @@
   --steps-border-color: var(--vp-c-divider);
   --steps-line-width: 2px;
   --steps-line-gap: 16px;
-  --steps-gap: 6px;
+  --steps-gap: 12px;
 }
 
 .docs-steps > ol {
@@ -32,6 +32,10 @@
     calc(var(--steps-marker-size) + var(--steps-gap));
 
   counter-increment: docs-step;
+}
+
+.docs-steps > ol > li > h4 {
+  transform: translateY(6px);
 }
 
 /* Remove VitePress's default spacing between list items */

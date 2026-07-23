@@ -3,7 +3,7 @@ title: K1V Gantry Overview
 description: An introduction to the K1 Vector linear-rail gantry conversion for Creality K-Series printers.
 ---
 
-# Introduction <StatusTag label="Beta" color="yellow" />
+# Introduction <Badge type="warning" text="Beta" />
 
 ## What is K1V?
 

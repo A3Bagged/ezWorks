@@ -2,7 +2,7 @@
 status: new
 ---
 
-# Custom markdown components <StatusTag label="Custom Experimental" color="purple" />
+# Custom markdown components <Badge type="important" text="Custom Experimental" />
 
 Custom built markdown components for this specific site.
 
@@ -46,34 +46,34 @@ Custom built markdown components for this specific site.
 
 </Steps>
 
-## Status Tag Examples
+## Badge Examples
 
-## Blue <StatusTag label="Beta" color="blue" />
+## Blue <Badge type="info" text="Beta" />
 
-## Green <StatusTag label="Updated" color="green" />
+## Green <Badge type="tip" text="Updated" />
 
-## Purple <StatusTag label="Experimental" color="purple" />
+## Purple <Badge type="important" text="Experimental" />
 
-## Yellow <StatusTag label="Preview" color="yellow" />
+## Yellow <Badge type="warning" text="Preview" />
 
 
-## Orange <StatusTag label="Changed" color="orange" />
+## Orange <Badge type="changed" text="Changed" />
 
-## Red <StatusTag label="Deprecated" color="red" />
+## Red <Badge type="danger" text="Deprecated" />
 
-## Gray <StatusTag label="Archived" color="gray" />
+## Gray <Badge type="neutral" text="Archived" />
 
 ---
 
 Tags can also appear inside normal text:
 
-This feature is <StatusTag label="Beta" color="blue" />.
+This feature is <Badge type="info" text="Beta" />.
 
-This documentation was recently <StatusTag label="Updated" color="green" />.
+This documentation was recently <Badge type="tip" text="Updated" />.
 
-This option is <StatusTag label="Experimental" color="purple" />.
+This option is <Badge type="important" text="Experimental" />.
 
-This feature is currently <StatusTag label="Deprecated" color="red" />.
+This feature is currently <Badge type="danger" text="Deprecated" />.
 
 ## Box containers
 
