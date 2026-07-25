@@ -1030,3 +1030,26 @@ h2 > .VPBadge {
   color: var(--vp-badge-neutral-text);
   background-color: var(--vp-badge-neutral-bg);
 }
+
+
+/**
+ * Colored ordered list numbers
+ * -------------------------------------------------------------------------- */
+.vp-doc ol:not(.docs-steps *) {
+  list-style: none;
+  counter-reset: step-counter;
+  padding-left: 0;
+}
+
+.vp-doc ol:not(.docs-steps *) > li {
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: 1.5em;
+}
+
+.vp-doc ol:not(.docs-steps *) > li::before {
+  content: counter(step-counter) ".";
+  position: absolute;
+  left: 0;
+  color: var(--vp-c-brand-1);
+}

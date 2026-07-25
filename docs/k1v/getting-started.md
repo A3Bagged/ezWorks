@@ -240,16 +240,16 @@ You'll see three common idler configurations throughout the build — **single b
 A compact idler configuration for a single belt path.
 :::
 
-::: card Live Idler
-![Exploded view of the live idler](/images/k1v/live-idler-exploded.png)
-
-The complete idler stack rotates smoothly around its axle.
-:::
-
 ::: card Double Idler Stack
 ![Exploded view of the double bearing stack](/images/k1v/double-idler-stack.png)
 
 Two bearing pairs guide parallel belt paths while maintaining alignment.
+:::
+
+::: card Live Idler
+![Exploded view of the live idler](/images/k1v/live-idler-exploded.png)
+
+The complete idler stack rotates smoothly around its axle.
 :::
 
 ::::
@@ -264,7 +264,7 @@ Because the Voron-Style Pins are quite expensive we have an alternate solution t
 ![Exploded view of the single bearing stack](/images/k1v/budget-idler-stack.png)
 :::
 
-::: card-empty Voron-Style Idler Stack
+::: card-empty Recommended Idler Stack
 ![Exploded view of the live idler](/images/k1v/single-idler-stack.png)
 :::
 
@@ -279,7 +279,7 @@ the only catch is that you need 2 Timing Pulleys to create 1 Dehubbed Pulley
 
 ![Step by step instruction of 'dehubbing' GT2 Pulleys](/images/k1v/Dehubbed.png)
 
-Image by Voron showing how a dehubbed idler is made.
+-# Image showing how a dehubbed idler is made.
 
 ---
 

@@ -7,10 +7,21 @@ outline: [2, 3]
 
 # Printer Preparation <Badge type="warning" text="Under Construction" />
 
-First step is to take off the top frame and remove the gantry, if you don't know how i suggest you don't look further.
-If you forgot how, [here](https://www.youtube.com/watch?v=yAbo99uSGoE) is a little video reminder.
+This procedure prepares the stock Creality K1 printer for the K1V gantry's mounting points.
 
-### Tools you need:
+::: warning Warranty information
+This mod requires modifying your printer's frame and panels. If your printer is still under warranty and you want to keep it that way, don't proceed with this mod.
+
+Proceed at your own risk.
+:::
+
+## Requirements
+
+Power off the printer, disconnect it from mains power, and prepare it for gantry removal before starting this procedure.
+
+Remove the top frame and gantry before you begin this step.<br> [Watch this video](https://www.youtube.com/watch?v=yAbo99uSGoE) if you need a refresher.
+
+## Tools and parts
 ::: bom
 | Part                                                                                          | Item                                  | Qty |
 |:---------------------------------------------------------------------------------------------:|---------------------------------------|:---:|
@@ -21,75 +32,81 @@ If you forgot how, [here](https://www.youtube.com/watch?v=yAbo99uSGoE) is a litt
 | ![Linear Rail alignment Jig](/images/k1v/parts/tools/counter-sink-bit.png)                    | Countersink Bit                       | 1   |
 :::
 
-## Frame preparation
+## Preparation
+1. Remove the top frame and stock gantry according to the printer-disassembly procedure.
+2. Loosen the top of the backpanel to access the rear frame.
+3. Clear wiring and other components away from the drilling area.
+4. Temporarily install the top frame back on the printer (push-fit).
 
-Before we can install the new gantry we need to do some modifications to the frame and backpanel of the printer for mounting options and clearance.
+::: danger Disconnect mains power
+Don't drill the printer while it's connected to mains power. Metal chips can enter powered electronics and cause electrical shock, short circuits, or permanent hardware damage.
+:::
 
----
+::: warning Protect the electronics
+Cover or remove exposed electronics before drilling. Collect all metal chips and inspect the printer carefully before reconnecting power.
+:::
 
-### Top Frame holes
+## Frame Overview
 
-To get a better understanding we'll show you a full image of what we're working on.
+Here's an overview of the holes you'll be drilling, outlined in blue:
 
 ![drill holes](/images/k1v/frame-prep/top-frame-full.png)
 
-Let's start drilling!
+## Top Frame
+
+Start with the top frame. Make sure the gantry is removed and the top frame is seated into the printer's vertical frames.
 
 <Steps>
 
-
-1. #### Left side: rear hole
-    To secure the K1V gantry to the frame we need to drill some additional holes using the provided jigs. Start by aligning the `TopFrame-Jig` to the left side of the frame towards the rear. Use one of the side panel screws and screw it into the left hole of the jig to hold it in place and drill the center hole using a 3.5mm drill bit all the way through the frame.
+1. ### Left side: rear hole
+    Align the `TopFrame-Jig` to the left side of the frame, toward the rear, lining up the jig's left hole with the smallest of the panel's mounting holes. Screw one of the side panel screws into the jig's left hole to hold it in place, then drill the center hole with a 3.5mm bit all the way through the frame.
 
     ![drill holes](/images/k1v/frame-prep/frame-step-1.png)
 
-    -# Make sure the top side of the jig is fully seated against the frame.
+    -# Seat the top side of the jig flush against the frame before drilling.
 
-2. #### Left side: front hole
+2. ### Left side: front hole
 
-    Repeat the same towards the front of the printer. Align the jig, use a panel screw to temporarily hold it in place and drill through the center hole of the jig.
+    Repeat toward the front of the printer. Align the jig, hold it with a panel screw through the right hole, and drill through the center hole.
 
     ![drill holes](/images/k1v/frame-prep/frame-step-2.png)
 
+3. ### Left side: center hole
 
-3. #### Left side: center hole
-
-    For the center we need to measure out the center of the frame to drill the center hole. Hold the jig by hand and measure both sides until centered. When ready drill the hole.
+    Hold the jig by hand and measure both sides until it's centered on the frame. Once it's fully seated, drill.
 
     ![drill holes](/images/k1v/frame-prep/frame-step-3.png)
 
-    When finished repeat the same steps for the right **side** of the printer.
+    Repeat all three holes on the right side of the printer.
 
-    ::: box-yellow
-    For the **Front** of the printer we only need to drill the centrer hole. Nothing on the rear, this hole already exists.
+    ::: box-green
+    On the front of the printer, drill only the center hole. Skip the rear hole here, it already exists.
     :::
 
-4. #### Countersink the drilled holes
+4. ### Countersink the drilled holes
 
-    Because the screws we will be installing need to sit flush we need to countersink the holes. Take any FHCS M3 screw for good measure, countersink a hole with a countersink bit and fit the FHCS screw in until you can no longer feel it. Be carefull that you don't countersink the holes too deep, this will comprimise rigidity and frame strength!
+    These screws need to sit flush, so countersink each hole. Take an FHCS M3 screw, countersink the hole, and test-fit it until you can't feel it proud of the surface. Go slow — countersinking too deep weakens the frame.
 
 </Steps>
 
----
-
-### Rear Corner Frame
+## Rear Corner Frame
 
 <Steps>
 
-1. #### Side of the printer
+1. ### Side of the printer
 
-    For the rear corners we need to drill 2 new holes lower than the existing ones. Slide the jig in the frame untill fully seated and hold it in place with one of the original side panel screws. Drill the hole where the arrow points and countersink this hole until flush. Use the same method reversed on the other side of the printer.
+    Drill 2 new holes lower than the existing ones at each rear corner. Slide the `Rear Frame Drill Jig` into the frame until it's fully seated, hold it with one of the original side panel screws, and drill where the arrow points. Countersink until flush. Repeat on the other side of the printer.
 
     ![drill holes](/images/k1v/frame-prep/frame-step-4.png)
 
-2. #### Rear of the printer
+2. ### Rear of the printer
 
-    For the rear its a little bit different. We need to secure the top hole with a SHCS or BHCS M3x8 and visually line up the hole until straight. For the back ppanel you can use a 6mm pin or screw, or use the provided printable 6mm plug for alignment. Drill the hole with 3.5mm, because of the backpanel we don't countersink. If you really want to you can countersink the hole and enlarge the hole in the panel to 6mm for access.
+    Secure the top hole with a SHCS or BHCS M3×8 and line it up visually until straight. For the back panel, seat the printable 6mm `alignment plug` into the existing 6mm hole, then drill with a 3.5mm bit. Skip the countersink here. If you want it countersunk anyway, enlarge the hole in the plastic rear panel to 6mm first.
 
     ![drill holes](/images/k1v/frame-prep/frame-step-5.png)
 
 </Steps>
 
-## Backpanel preperation
+## Backpanel preparation
 
 Under construction.
