@@ -159,3 +159,15 @@ export default {
   }
 }
 ```
+
+# This is a H1 Heading
+
+## This is a H2 Heading
+
+### This is a H3 Heading
+
+#### This is a H4 Heading
+
+##### This is a H5 Heading
+
+###### This is a H6 Heading

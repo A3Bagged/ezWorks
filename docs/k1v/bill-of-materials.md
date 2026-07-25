@@ -7,10 +7,10 @@ editLink: true
 
 # Bill of Materials <Badge type="warning" text="Beta" />
 
-::: tip Note
-Quantities below are totals for the **full gantry** (both left and right sides included) unless noted otherwise.
-Per-Category BOM list will be on their dedicated pages.
-:::
+
+Quantities below are totals for the **full gantry**.<br>Per-category BOM lists live on their dedicated pages.<br>
+Where possible, we provide multiple sources, such as [AliExpress](http://aliexpress.com) and [Amazon](https://www.amazon.com), unless noted otherwise.
+This keeps hardware easy to source no matter where you're building from.
 
 ## Hardware
 ::: bom
@@ -27,10 +27,10 @@ Per-Category BOM list will be on their dedicated pages.
 | ![Extrusion Spacer](/images/k1v/parts/printed/extrusion-spacer.png)      | Extrusion Spacer             | 2   |
 :::
 
-### Jigs and tools
+## Jigs and tools
 ::: bom
 | Part                                                                                      | Item                                  | Qty |
 |:-----------------------------------------------------------------------------------------:|---------------------------------------|:---:|
-| ![Blind-Joint Drilling Jig](/images/k1v/parts/printed/jigs/blind-joint-drill.png)         | Blind-Joint drilling Jig              | 1   |
-| ![Linear Rail alignment Jig](/images/k1v/parts/printed/jigs/rail-alignment.png)           | Linear Rail alignment Jig             | 1   |
+| ![Blind-Joint Drilling Jig](/images/k1v/parts/printed/jigs/blind-joint-drill.png)         | Blind-Joint Drilling Jig              | 1   |
+| ![Linear Rail alignment Jig](/images/k1v/parts/printed/jigs/rail-alignment.png)           | Linear Rail Alignment Jig             | 1   |
 :::

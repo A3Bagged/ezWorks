@@ -9,11 +9,14 @@ outline: [2, 3]
 
 This procedure prepares the stock Creality K1 printer for the K1V gantry's mounting points.
 
-::: warning Warranty information
+::: info Warranty information
 This mod requires modifying your printer's frame and panels. If your printer is still under warranty and you want to keep it that way, don't proceed with this mod.
 
 Proceed at your own risk.
 :::
+
+> [!WARNING]
+> If you still need to print parts on the printer you're about to mod, follow [Printing](/k1v/printing) first.
 
 ## Requirements
 
@@ -22,15 +25,27 @@ Power off the printer, disconnect it from mains power, and prepare it for gantry
 Remove the top frame and gantry before you begin this step.<br> [Watch this video](https://www.youtube.com/watch?v=yAbo99uSGoE) if you need a refresher.
 
 ## Tools and parts
-::: bom
+::: bom-collapsable 4
 | Part                                                                                          | Item                                  | Qty |
 |:---------------------------------------------------------------------------------------------:|---------------------------------------|:---:|
 | ![Blind-Joint Drilling Jig](/images/k1v/parts/printed/jigs/top-frame-drill-jig.png)           | Top Frame Drill Jig                   | 1   |
 | ![Linear Rail alignment Jig](/images/k1v/parts/printed/jigs/rear-frame-drill-jig.png)         | Rear Frame Drill Jig                  | 1   |
 | ![Linear Rail alignment Jig](/images/k1v/parts/printed/jigs/rear-frame-alignment-plug.png)    | Rear Frame Alignment Plug             | 1   |
+| ![Linear Rail alignment Jig](/images/k1v/parts/printed/jigs/backpanel-jig-l.png)              | Backpanel Jig Left                    | 1   |
+| ![Linear Rail alignment Jig](/images/k1v/parts/printed/jigs/backpanel-jig-r.png)              | Backpanel Jig Right                   | 1   |
 | ![Linear Rail alignment Jig](/images/k1v/parts/tools/drill-bit.png)                           | 3.5mm Metal Drill Bit                 | 1   |
-| ![Linear Rail alignment Jig](/images/k1v/parts/tools/counter-sink-bit.png)                    | Countersink Bit                       | 1   |
+| ![Linear Rail alignment Jig](/images/k1v/parts/heat-insert.png)                               | M3 Heat-set Insert                    | 4   |
+| ![Linear Rail alignment Jig](/images/k1v/parts/FHCS.png)                                      | FHCS M3x10                            | 2   |
+| ![Linear Rail alignment Jig](/images/k1v/parts/tools/fine-marker.png)                         | Fine Line Marker (white)              | 1   |
+| ![Linear Rail alignment Jig](/images/k1v/parts/tools/dremel.png)                              | Dremel Cutting Tool                   | 1   |
+| ![Linear Rail alignment Jig](/images/k1v/parts/tools/dremel-cutting.png)                      | Dremel Cutting Disk                   | 1   |
+| ![Linear Rail alignment Jig](/images/k1v/parts/tools/dremel-grinding.png)                     | Dremel Grinding Stones                | 1   |
+| ![Linear Rail alignment Jig](/images/k1v/parts/tools/ultrasonic-cutter.png)                   | Ultrasonic Knife                      | 1   |
+| ![Linear Rail alignment Jig](/images/k1v/parts/printed/rear-z-dustcap.png)                    | Rear Leadscrew Dustcap (optional)     | 1   |
 :::
+
+> [!TIP]
+> You don't need the Dremel and Ultrasonic knife. An ultrasonic knife does make the job easier but a Dremel with some cutting disks and grinding stones work perfectly fine too.
 
 ## Preparation
 1. Remove the top frame and stock gantry according to the printer-disassembly procedure.
@@ -107,6 +122,92 @@ Start with the top frame. Make sure the gantry is removed and the top frame is s
 
 </Steps>
 
-## Backpanel preparation
+## Backpanel Preparation
 
-Under construction.
+In order to fit our belts through we need to modify the backpanel.
+
+<Steps>
+
+1. ### Install heat-set inserts into the jigs
+    Start by installing heat-set inserts in both `backpanel jigs`.
+
+    ![drill holes](/images/k1v/backpanel-prep/panel-step-1.png)
+
+    -# Make sure the heat-set inserts sit flush with the surface.
+
+2. ### Rear panel cable raceways
+
+    Before we can fit our jigs we need to remove the cable raceway covers and grind away the top part. Remove these completely!
+    What worked for me: bend the piece up and down until it snaps. No cutting needed.
+
+    ![drill holes](/images/k1v/backpanel-prep/panel-step-2.png)
+
+3. ### Installing the backpanel jigs
+
+    Seat the jigs into each top corner and secure them using screws from the outside inward. For the bottom, reuse the original screw. For the top, use an `FHCS M3×10`.
+
+    ![drill holes](/images/k1v/backpanel-prep/panel-step-3.png)
+
+4. ### Drill backpanel holes
+
+    Drill the 8 holes shown in the image below with a 3.5mm drill bit, all the way through the plastic backpanel.
+
+    ![drill holes](/images/k1v/backpanel-prep/panel-step-4.png)
+
+5. ### Mark backpanel cutting lines
+
+    Trace the inside of the jig with a fine marker, preferably a color that stands out clearly against the backpanel, like white. Remove the jigs afterward.
+    
+    ![drill holes](/images/k1v/backpanel-prep/panel-step-5.png)
+
+6. ### Cutting away material for belt holes
+
+    Take your Dremel tool and start cutting the lines you've just traced. The lines should be cut from hole to hole (the inner 4 holes).
+    Alternatively, you can use an `ultrasonic knife` to cut through the plastic. When done, remove the piece and deburr any edges.
+    
+    ![drill holes](/images/k1v/backpanel-prep/panel-step-6.png)
+
+    > [!CAUTION]
+    > Don't cut outside the traced areas, the 4 outer holes are mounting holes.
+
+7. ### Remove extra material
+
+    Finally, cut away the highlighted blue part. It helps to loosen the screws at the top of the backpanel first, so you can gently pull it away from the frame and give yourself more room to work without hitting the aluminum.
+    
+    ![drill holes](/images/k1v/backpanel-prep/panel-step-7.png)
+
+8. ### Rear leadscrew belt clearance
+
+    Before assembling and routing the belts, remove a little more material to make room for them.<br>
+    
+    Take a Dremel with a cutting disk (or any other tool you prefer) and cut a line level with the bottom of the belt groove in the rear.
+    
+    ![drill holes](/images/k1v/backpanel-prep/panel-step-9.png)
+
+    -# The blue section needs to be removed.
+
+    Do the same for the middle piece and cut it flush. Try not to damage anything else nearby. Don't worry about the finish, we have a 3D-printable cover that makes it look nicer and doubles as a dust cover for your Z-assembly.
+    
+    ![drill holes](/images/k1v/backpanel-prep/panel-step-10.png)
+
+    Finally, install the dust cover until it's fully seated.
+
+    ![drill holes](/images/k1v/backpanel-prep/panel-step-11.png)
+
+Once you're done, the result should look like this.
+
+![drill holes](/images/k1v/backpanel-prep/panel-step-8.png)
+
+</Steps>
+
+
+## Verification
+
+Confirm all of the following before continuing:
+
+- The new hole passes through the intended rear-frame location.
+- The backpanel sits flat without being forced into position.
+- The mounting hardware passes through the backpanel and enters the drilled location.
+- No metal chips remain inside the printer.
+- No wiring, connectors, or electronic components were damaged during drilling.
+- All cut plastic edges are smooth and deburred.

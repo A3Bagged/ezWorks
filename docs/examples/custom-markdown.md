@@ -9,19 +9,19 @@ Custom built markdown components for this specific site.
 ## Github-flavored Alerts
 
 > [!NOTE]
-> Highlights information that users should take into account, even when skimming.
+> Highlights information that users should take into account, even when skimming. [test link](/)
 
 > [!TIP]
-> Optional information to help a user be more successful.
+> Optional information to help a user be more successful. [test link](/)
 
 > [!IMPORTANT]
-> Crucial information necessary for users to succeed.
+> Crucial information necessary for users to succeed. [test link](/)
 
 > [!WARNING]
-> Critical content demanding immediate user attention due to potential risks.
+> Critical content demanding immediate user attention due to potential risks. [test link](/)
 
 > [!CAUTION]
-> Negative potential consequences of an action.
+> Negative potential consequences of an action. [test link](/)
 
 
 ## Step list (Ordered list)

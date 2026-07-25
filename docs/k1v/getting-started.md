@@ -3,19 +3,20 @@ title: Getting Started with K1V
 description: Prepare for the K1V build with dimensional checks, recommended print settings, hardware guidance, and printing-support information.
 
 status: new
+outline: [2, 3]
 ---
 
 # Getting Started <Badge type="warning" text="Beta" />
 
-Before diving into the frame assembly, there are a few things worth sorting out first: making sure your printer can actually produce accurate parts, knowing the hardware you'll be working with, and understanding how to handle supports on the trickier prints.
+Before starting the frame assembly, sort out three things: confirm your printer produces accurate parts, get familiar with the hardware you'll be working with, and know how to handle supports on the trickier prints.
 
 ## Dimensional accuracy check
 
-3D printers drift out of calibration, and a small error here becomes a real headache once you're fitting bearings and other hardware. Before you print anything else, print the calibration test part included in the repo.
+3D printers drift out of calibration, and a small error here becomes a real headache once you're fitting bearings and other hardware. Print the calibration test part included in the repo before you print anything else.
 
 ::: tip
-Make sure you've run through your usual calibrations first.<br>
-Including extruder steps, filament tuning and dimensional accuracy.
+Run through your usual calibrations first.<br>
+That includes extruder steps, filament tuning, and dimensional accuracy.
 :::
 
 The test print checks for:
@@ -26,7 +27,7 @@ The test print checks for:
 - Overhangs up to 70°
 - F695 bearing seat fit
 
-### Recommended print settings:
+## Recommended print settings
 
 | Setting | Value |
 |---|---|
@@ -39,15 +40,15 @@ The test print checks for:
 | Top/bottom layers | 5 |
 | Supports | Not required unless specified |
 
--# K1V parts are designed for a 0.2mm tolerance, so make sure your printer can print with these standards.
+-# K1V parts are designed for a 0.2mm tolerance. Confirm your printer can print that tolerance before continuing.
 
 ## Printing supports
 
-Most STL files in this project have built-in support structures or are designed in a way they don't need supports. If you'd rather use your own supports or orientation, detach the built-in support (if present) and use your own.
+Most STL files in this project include built-in supports, or are designed so they don't need any. If you'd rather use your own supports or orientation, detach the built-in support (if present) first.
 
 ## Hardware overview
 
-K1V uses a mix of standard 3D-printer fasteners and a few less common parts. You don't need to memorize this list — it's here so that when a step says `LHSCS` or `Dowel Pin` later on, you know what to look for.
+K1V uses a mix of standard 3D-printer fasteners and a few less common parts. You don't need to memorize this list. It's here so that when a step says `LHSCS` or `Dowel Pin` later on, you know what to look for.
 
 
 ### Fasteners
@@ -86,7 +87,7 @@ K1V uses a mix of standard 3D-printer fasteners and a few less common parts. You
       title: 'Ultra-Low Socket Head Cap Screw (ULSHCS)',
       image: '/images/k1v/parts/ULSHCS.png',
       alt: 'ultra low head cap screw',
-      description: 'An ultra-low-profile (simetimes self-tapping) screw used where head clearance is extremely limited.',
+      description: 'An ultra-low-profile screw, sometimes self-tapping, used where head clearance is extremely limited.',
       spec: ''
     },
     {
@@ -106,7 +107,7 @@ K1V uses a mix of standard 3D-printer fasteners and a few less common parts. You
     {
       title: 'Square Nut',
       image: '/images/k1v/parts/square-nut.png',
-      alt: 'swuare nut',
+      alt: 'square nut',
       description: 'A thin four-sided nut designed to sit captive in a slot or printed pocket. Its flat sides prevent rotation while the screw is tightened.',
       spec: 'DIN 562'
     },
@@ -229,7 +230,7 @@ K1V uses a mix of standard 3D-printer fasteners and a few less common parts. You
 
 ## Idler stacks
 
-You'll see three common idler configurations throughout the build — **single bearing stack**, **double bearing stack** and **live shaft idler**, — each covered in detail on the diagrams below.
+You'll see three common idler configurations throughout the build: **single bearing stack**, **double bearing stack**, and **live shaft idler**. Each is covered in detail below.
 
 
 :::: card-grid
@@ -256,7 +257,7 @@ The complete idler stack rotates smoothly around its axle.
 
 ### Budget vs Recommended Idler Stacks
 
-Because the Voron-Style Pins are quite expensive we have an alternate solution that's a bit cheaper but we recommend the Voron-Style pins.
+Voron-style pins are the pricier option. We include a cheaper alternate solution below, but the Voron-style pins are what we recommend.
 
 :::: card-grid
 
@@ -272,17 +273,11 @@ Because the Voron-Style Pins are quite expensive we have an alternate solution t
 
 ### Dehubbed Pulley (Live Idler)
 
-We use `Dehubbed` Pulleys for the Live-Shaft Idlers, what are these?
-Essentially it's what the name says, GT2 Timing Pulleys have a "hub" with set/grub screws.
-By removing the hub we make the Timing Pulley smaller in Diameter.<br><br>
-the only catch is that you need 2 Timing Pulleys to create 1 Dehubbed Pulley
+We use `Dehubbed` pulleys for the live-shaft idlers. What are these?<br>
+
+A dehubbed pulley is exactly what it sounds like: a GT2 timing pulley with its hub (the part carrying the set/grub screws) removed. Without the hub, the pulley's outer diameter shrinks.<br>
+The catch is that you need 2 timing pulleys to make 1 dehubbed pulley.
 
 ![Step by step instruction of 'dehubbing' GT2 Pulleys](/images/k1v/Dehubbed.png)
 
 -# Image showing how a dehubbed idler is made.
-
----
-
-### Next up
-
-With calibration confirmed and your hardware kit ready, you're set to start on the [BOM List](./bill-of-materials).

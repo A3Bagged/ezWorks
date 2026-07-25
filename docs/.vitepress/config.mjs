@@ -112,7 +112,18 @@ export default defineConfig({
             : '</div>\n'
         }
       })
+      // Collapsible Bill of Materials table — same styling as `bom`, adds a "show more" toggle
+      md.use(container, 'bom-collapsable', {
+        render(tokens, index) {
+          if (tokens[index].nesting === 1) {
+            const match = tokens[index].info.trim().match(/^bom-collapsable\s*(\d*)$/)
+            const visibleRows = match && match[1] ? Number(match[1]) : 6
+            return `<BomCollapsable :visible-rows="${visibleRows}">\n`
+          }
 
+          return '</BomCollapsable>\n'
+        }
+      })
     }
   },
 

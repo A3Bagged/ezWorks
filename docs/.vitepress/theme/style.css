@@ -231,6 +231,11 @@
   border-radius: 10px;
 }
 
+.vp-doc a:hover, .edit-link-button:hover {
+  color: var(--vp-c-text-3) !important;
+  opacity: 1.0 !important;
+}
+
 /* Light-mode title colors */
 .vp-doc .custom-block.info .custom-block-title {
   color: #1d4ed8;
@@ -282,7 +287,7 @@
   --github-note: #0969da;
   --github-tip: #1a7f37;
   --github-important: #8250df;
-  --github-warning: #9a6700;
+  --github-warning: #FFC107;
   --github-caution: #cf222e;
 }
 
@@ -290,10 +295,9 @@
   --github-note: #4493f8;
   --github-tip: #3fb950;
   --github-important: #ab7df8;
-  --github-warning: #d29922;
+  --github-warning: #ffca28;
   --github-caution: #f85149;
 }
-
 
 /* Shared GitHub alert layout */
 .vp-doc .custom-block.github-alert {
@@ -394,18 +398,29 @@
   --alert-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M12%2016h.01%22%2F%3E%3Cpath%20d%3D%22M12%208v4%22%2F%3E%3Cpath%20d%3D%22M15.312%202a2%202%200%200%201%201.414.586l4.688%204.688A2%202%200%200%201%2022%208.688v6.624a2%202%200%200%201-.586%201.414l-4.688%204.688a2%202%200%200%201-1.414.586H8.688a2%202%200%200%201-1.414-.586l-4.688-4.688A2%202%200%200%201%202%2015.312V8.688a2%202%200%200%201%20.586-1.414l4.688-4.688A2%202%200%200%201%208.688%202z%22%2F%3E%3C%2Fsvg%3E");
 }
 
-
-
-
-/* Match manual dividers with VitePress H2 divider spacing */
-.vp-doc hr {
-  margin: 48px 0 0;
+.vp-doc .custom-block.github-alert.note a {
+  color: var(--github-note);
 }
 
-.vp-doc hr + h3 {
-  margin-top: 24px;
+.vp-doc .custom-block.github-alert.tip a {
+  color: var(--github-tip);
 }
 
+.vp-doc .custom-block.github-alert.important a {
+  color: var(--github-important);
+}
+
+.vp-doc .custom-block.github-alert.warning a {
+  color: var(--vp-c-brand-1);
+}
+
+.vp-doc .custom-block.github-alert.warning a:hover {
+  color: var(--vp-c-brand-3);
+}
+
+.vp-doc .custom-block.github-alert.caution a {
+  color: var(--github-caution);
+}
 
 /**
  * Discord-style small text
@@ -900,6 +915,46 @@
   }
 }
 
+.vp-doc .bom-table-scroll {
+  position: relative;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.vp-doc .bom-table-scroll::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, var(--bom-row-bg));
+  pointer-events: none;
+}
+
+.vp-doc .bom-table-scroll.expanded::after {
+  display: none;
+}
+
+.vp-doc .bom-toggle-btn {
+  display: block;
+  width: 100%;
+  padding: 12px 8px;
+  border: 0;
+  border-top: 1px solid var(--bom-border);
+  background-color: var(--bom-header-bg);
+  color: var(--vp-c-brand-1);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.18s ease;
+}
+
+.vp-doc .bom-toggle-btn:hover {
+  background-color: var(--bom-row-hover-bg);
+  color: var(--vp-c-brand-3);
+}
+
 
 /**
  * Titleless colored boxes
@@ -1052,4 +1107,42 @@ h2 > .VPBadge {
   position: absolute;
   left: 0;
   color: var(--vp-c-brand-1);
+}
+
+
+/**
+ * Headings
+ * -------------------------------------------------------------------------- */
+.vp-doc h1 {
+  font-size: 2.2em;
+}
+
+.vp-doc h2 {
+  padding-top: 20px;
+  font-size: 1.65em;
+  font-weight: 600;
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+.vp-doc h2 .header-anchor {
+  top: 20px; /* padding-top you added + VitePress's original 24px offset */
+}
+
+
+.vp-doc h3 {
+  font-weight: 500;
+}
+
+/* .vp-doc img {
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-divider);
+} */
+
+/* Match manual dividers with VitePress H2 divider spacing */
+.vp-doc hr {
+  margin: 48px 0 0;
+}
+
+.vp-doc hr + h3 {
+  margin-top: 24px;
 }
