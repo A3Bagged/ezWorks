@@ -4,6 +4,7 @@ import Steps from './components/StepsList.vue'
 import ImageCardGrid from './components/ImageCardGrid.vue'
 import PartList from './components/PartList.vue'
 import BomCollapsable from './components/BomCollapsable.vue'
+import ModelViewer3D from './components/ModelViewer3D.vue'
 import './style.css'
 
 export default {
@@ -14,5 +15,6 @@ export default {
     app.component('ImageCardGrid', ImageCardGrid)
     app.component('PartList', PartList)
     app.component('BomCollapsable', BomCollapsable)
+    app.component('ModelViewer3D', ModelViewer3D)
   }
 }

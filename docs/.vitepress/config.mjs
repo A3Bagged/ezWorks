@@ -172,10 +172,6 @@ export default defineConfig({
             {
               text: 'Preparation',
               link: '/k1v/preparation'
-            },
-            {
-              text: 'Printing',
-              link: '/k1v/printing'
             }
           ]
         },

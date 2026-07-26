@@ -20,6 +20,7 @@
     "vue": "^3.5.40"
   },
   "dependencies": {
+    "@google/model-viewer": "^4.3.1",
     "@lucide/vue": "^1.25.0"
   }
 }

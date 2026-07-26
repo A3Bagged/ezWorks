@@ -1121,7 +1121,7 @@ h2 > .VPBadge {
   padding-top: 20px;
   font-size: 1.65em;
   font-weight: 600;
-  border-top: 1px solid var(--vp-c-divider);
+  border-top: 2px solid var(--vp-c-divider);
 }
 
 .vp-doc h2 .header-anchor {
@@ -1133,14 +1133,10 @@ h2 > .VPBadge {
   font-weight: 500;
 }
 
-/* .vp-doc img {
-  border-radius: 8px;
-  border: 1px solid var(--vp-c-divider);
-} */
-
 /* Match manual dividers with VitePress H2 divider spacing */
 .vp-doc hr {
   margin: 48px 0 0;
+  border-top: 2px solid var(--vp-c-divider);
 }
 
 .vp-doc hr + h3 {

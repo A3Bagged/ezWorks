@@ -2,7 +2,7 @@
 title: K1V Assembly Preparation
 description: Prepare your printer, printed parts, hardware, and tools before beginning the K1V gantry assembly.
 
-outline: [2, 3]
+# outline: [2, 3]
 ---
 
 # Printer Preparation <Badge type="warning" text="Under Construction" />
@@ -16,7 +16,7 @@ Proceed at your own risk.
 :::
 
 > [!WARNING]
-> If you still need to print parts on the printer you're about to mod, follow [Printing](/k1v/printing) first.
+> If you still need to print parts on the printer you're about to mod, print them first.
 
 ## Requirements
 
