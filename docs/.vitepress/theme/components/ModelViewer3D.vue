@@ -5,31 +5,31 @@
         Loading 3D viewer…
       </div>
 
-      <model-viewer
-        v-else
-        ref="viewerElement"
-        :src="model"
-        :alt="alt"
-        animation-name="Explode"
-        camera-controls
-        disable-tap
-        touch-action="pan-y"
-        reveal="manual"
-        loading="lazy"
-        environment-image="legacy"
-        tone-mapping="commerce"
-        shadow-intensity="0"
-        exposure="1"
-        :camera-target="defaultCameraTarget"
-        :camera-orbit="defaultCameraOrbit"
-        :field-of-view="defaultFieldOfView"
-        min-camera-orbit="auto auto 60%"
-        max-camera-orbit="auto auto 700%"
-        min-field-of-view="20deg"
-        max-field-of-view="55deg"
-        interpolation-decay="120"
-        @load="handleLoad"
-      >
+    <model-viewer
+      v-else
+      ref="viewerElement"
+      :src="withBase(model)"
+      :alt="alt"
+      animation-name="Explode"
+      camera-controls
+      disable-tap
+      touch-action="pan-y"
+      reveal="manual"
+      loading="lazy"
+      environment-image="legacy"
+      tone-mapping="commerce"
+      shadow-intensity="0"
+      exposure="1"
+      :camera-target="defaultCameraTarget"
+      :camera-orbit="defaultCameraOrbit"
+      :field-of-view="defaultFieldOfView"
+      min-camera-orbit="auto auto 60%"
+      max-camera-orbit="auto auto 700%"
+      min-field-of-view="20deg"
+      max-field-of-view="55deg"
+      interpolation-decay="120"
+      @load="handleLoad"
+    >
         <div
           slot="poster"
           class="poster"
@@ -150,6 +150,8 @@ import {
   ref
 } from 'vue'
 
+import { withBase } from 'vitepress'
+
 const props = defineProps({
   model: {
     type: String,
@@ -205,7 +207,7 @@ const posterStyle = computed(() => {
   if (!props.poster) return {}
 
   return {
-    backgroundImage: `url("${props.poster}")`
+    backgroundImage: `url("${withBase(props.poster)}")`
   }
 })
 
