@@ -16,10 +16,10 @@
       touch-action="pan-y"
       reveal="manual"
       loading="lazy"
-      environment-image="legacy"
+      :environment-image="withBase('/models/environments/HDRI.jpg')"
       tone-mapping="commerce"
       shadow-intensity="0"
-      exposure="1"
+      :exposure="1.45"
       :camera-target="defaultCameraTarget"
       :camera-orbit="defaultCameraOrbit"
       :field-of-view="defaultFieldOfView"
@@ -70,11 +70,17 @@
           title="Reset animation"
           @click="resetAnimation"
         >
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <path
-              fill="currentColor"
-              d="M12 5a7 7 0 1 1-6.32 4H3l3.5-3.5L10 9H7.74A5 5 0 1 0 12 7V5Z"
-            />
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M19 20 9 12l10-8v16Z" />
+            <path d="M5 19V5" />
           </svg>
           <span>Reset</span>
         </button>
@@ -83,7 +89,8 @@
       <div v-if="modelLoaded && animationReady" class="viewer-toolbar viewer-toolbar--right">
         <button
           type="button"
-          class="toolbar-button"
+          class="toolbar-button toolbar-button--icon"
+          aria-label="Reset camera"
           title="Reset camera"
           @click="resetCamera"
         >
@@ -93,12 +100,12 @@
               d="M12 5a7 7 0 1 1-6.32 4H3l3.5-3.5L10 9H7.74A5 5 0 1 0 12 7V5Z"
             />
           </svg>
-          <span>Reset camera</span>
         </button>
 
         <button
           type="button"
-          class="toolbar-button"
+          class="toolbar-button toolbar-button--icon"
+          :aria-label="isFullscreen ? 'Exit fullscreen' : 'Fullscreen'"
           :title="isFullscreen ? 'Exit fullscreen' : 'Fullscreen'"
           @click="toggleFullscreen"
         >
@@ -115,9 +122,77 @@
               d="M8 4h2v6H4V8h4V4Zm6 0h2v4h4v2h-6V4ZM4 14h6v6H8v-4H4v-2Zm10 0h6v2h-4v4h-2v-6Z"
             />
           </svg>
-
-          <span>{{ isFullscreen ? 'Exit' : 'Fullscreen' }}</span>
         </button>
+
+        <button
+          type="button"
+          class="toolbar-button toolbar-button--icon"
+          aria-label="3D viewer controls"
+          title="3D viewer controls"
+          :aria-expanded="isHelpOpen"
+          aria-controls="viewer-help"
+          @click="isHelpOpen = !isHelpOpen"
+        >
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M11 18h2v2h-2v-2Zm1-16a7 7 0 1 0 0 14A7 7 0 0 0 12 2Zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10Zm0-8a3 3 0 0 0-3 3h2a1 1 0 1 1 1.7.7c-.9.55-1.7 1.2-1.7 2.8V13h2v-.4c0-.75.25-1 .95-1.45A3 3 0 0 0 12 6Z"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div
+        v-if="modelLoaded && animationReady && isHelpOpen"
+        id="viewer-help"
+        class="viewer-help"
+        role="dialog"
+        aria-label="3D viewer controls"
+      >
+        <div class="viewer-help__header">
+          <div class="viewer-help__title">
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 16v-4" />
+              <path d="M12 8h.01" />
+            </svg>
+
+            <span>Viewer Controls</span>
+          </div>
+
+          <button
+            class="viewer-help__close"
+            @click="isHelpOpen = false"
+            title="Close"
+          >
+            ×
+          </button>
+        </div>
+
+        <dl class="viewer-help__list">
+          <div>
+            <dt>Rotate</dt>
+            <dd>Left-drag or drag with one finger</dd>
+          </div>
+
+          <div>
+            <dt>Pan</dt>
+            <dd>Right-drag or drag with two fingers</dd>
+          </div>
+
+          <div>
+            <dt>Zoom</dt>
+            <dd>Mouse wheel or pinch</dd>
+          </div>
+        </dl>
       </div>
 
       <div v-if="modelLoaded && animationReady" class="explosion-control">
@@ -193,6 +268,7 @@ const viewerWrapper = ref(null)
 const explosion = ref(0)
 const isPlaying = ref(false)
 const isFullscreen = ref(false)
+const isHelpOpen = ref(false)
 
 let direction = 1
 let animationFrameId = null
@@ -448,6 +524,8 @@ async function toggleFullscreen() {
 function handleFullscreenChange() {
   isFullscreen.value =
     document.fullscreenElement === viewerWrapper.value
+
+  isHelpOpen.value = false
 }
 </script>
 
@@ -580,6 +658,11 @@ model-viewer {
   flex: 0 0 auto;
 }
 
+.toolbar-button--icon {
+  width: 36px;
+  padding: 0;
+}
+
 .toolbar-button:hover {
   border-color: var(--vp-c-brand-1);
   color: var(--vp-c-brand-1);
@@ -589,6 +672,123 @@ model-viewer {
 .explosion-slider:focus-visible {
   outline: 2px solid var(--vp-c-brand-1);
   outline-offset: 2px;
+}
+
+
+.viewer-help {
+  position: absolute;
+  top: 58px;
+  right: 14px;
+  z-index: 6;
+
+  width: min(420px, calc(100% - 28px));
+  padding: 16px;
+
+  border: 1px solid rgb(255 255 255 / 8%);
+  border-radius: 10px;
+
+  background: rgb(24 24 28 / 60%);
+  color: var(--vp-c-text-1);
+
+  box-shadow: 0 10px 30px rgb(0 0 0 / 25%);
+  backdrop-filter: blur(8px);
+}
+
+.viewer-help__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-bottom: 10px;
+}
+
+.viewer-help__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+}
+
+.viewer-help__title svg {
+  width: 20px;
+  height: 20px;
+  color: var(--vp-c-brand-1);
+  flex-shrink: 0;
+}
+
+.viewer-help__close {
+  display: grid;
+  place-items: center;
+
+  width: 30px;
+  height: 30px;
+  padding: 0;
+
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  background: transparent;
+  color: var(--vp-c-text-2);
+
+  font: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+
+  cursor: pointer;
+  transition: .2s;
+}
+
+.viewer-help__close:hover {
+  border-color: var(--vp-c-divider);
+  background: color-mix(
+    in srgb,
+    var(--vp-c-bg) 90%,
+    transparent
+  );
+  color: var(--vp-c-text-1);
+}
+
+.viewer-help__close:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 2px;
+}
+
+.viewer-help__close:hover {
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
+}
+
+.viewer-help__close:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 2px;
+}
+
+.viewer-help__list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.viewer-help__list > div {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 14px;
+}
+
+.viewer-help__list dt {
+  color: var(--vp-c-text-1);
+  font-weight: 600;
+}
+
+.viewer-help__list dd {
+  margin: 0;
+  color: var(--vp-c-text-2);
+  white-space: nowrap;
 }
 
 /* Explosion slider — intentionally no surrounding panel */
@@ -718,6 +918,12 @@ model-viewer {
 
   .toolbar-button span {
     display: none;
+  }
+
+  .viewer-help {
+    top: 54px;
+    right: 10px;
+    width: min(300px, calc(100% - 20px));
   }
 
   .explosion-control {
