@@ -63,9 +63,20 @@ Cover or remove exposed electronics before drilling. Collect all metal chips and
 
 ## Frame Overview
 
-Here's an overview of the holes you'll be drilling, outlined in blue:
+Here's an overview of the holes you'll be drilling, highlighted with green arrows in the 3D-Viewer below. 
 
+<ModelViewer3D
+  model="/models/FrameDrilling.glb"
+  poster="/models/FrameDrilling-poster.webp"
+  default-camera-orbit="-45deg 70deg auto"
+  alt="Interactive exploded view of the XY-joint assembly"
+/>
+
+::: collapse-warning Click here if the 3D-Viewer doesn't work.
 ![drill holes](/images/k1v/frame-prep/top-frame-full.png)
+
+To-be drilled holes highlighted in blue
+:::
 
 ## Top Frame
 

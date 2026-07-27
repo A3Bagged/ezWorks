@@ -957,46 +957,201 @@
 
 
 /**
- * Titleless colored boxes
+ * Static colored box containers
+ * Markdown: ::: box-info, ::: box-tip, etc.
  * -------------------------------------------------------------------------- */
 
 .vp-doc .docs-box {
   margin: 16px 0;
   padding: 16px 18px;
-  border: 0;
+  border: 1px solid transparent;
   border-radius: 10px;
   background-color: var(--vp-c-bg-soft);
   color: var(--vp-c-text-1);
 }
 
-/* Remove unwanted Markdown spacing inside boxes */
-.vp-doc .docs-box > :first-child {
-  margin-top: 0;
-}
+.vp-doc .docs-box > :first-child { margin-top: 0; }
+.vp-doc .docs-box > :last-child { margin-bottom: 0; }
 
-.vp-doc .docs-box > :last-child {
-  margin-bottom: 0;
-}
-
-/* Color variants */
-.vp-doc .docs-box-blue {
+.vp-doc .docs-box-info {
+  border-color: color-mix(in srgb, #3b82f6 24%, transparent);
   background-color: var(--vp-custom-block-info-bg);
 }
-
+.vp-doc .docs-box-tip {
+  border-color: color-mix(in srgb, #22c55e 24%, transparent);
+  background-color: var(--vp-custom-block-tip-bg);
+}
+.vp-doc .docs-box-warning {
+  border-color: color-mix(in srgb, #ffca28 28%, transparent);
+  background-color: var(--vp-custom-block-warning-bg);
+}
+.vp-doc .docs-box-danger {
+  border-color: color-mix(in srgb, #ef4444 24%, transparent);
+  background-color: var(--vp-custom-block-danger-bg);
+}
+.vp-doc .docs-box-details {
+  border-color: color-mix(in srgb, #8b5cf6 24%, transparent);
+  background-color: var(--vp-custom-block-details-bg);
+}
 .vp-doc .docs-box-brand {
+  border-color: color-mix(in srgb, var(--vp-c-brand-1) 28%, transparent);
   background-color: var(--vp-c-brand-soft);
 }
 
+/* Compatibility aliases for existing pages */
+.vp-doc .docs-box-blue {
+  border-color: color-mix(in srgb, #3b82f6 24%, transparent);
+  background-color: var(--vp-custom-block-info-bg);
+}
 .vp-doc .docs-box-green {
+  border-color: color-mix(in srgb, #22c55e 24%, transparent);
   background-color: var(--vp-custom-block-tip-bg);
 }
-
+.vp-doc .docs-box-yellow {
+  border-color: color-mix(in srgb, #ffca28 28%, transparent);
+  background-color: var(--vp-custom-block-warning-bg);
+}
 .vp-doc .docs-box-red {
+  border-color: color-mix(in srgb, #ef4444 24%, transparent);
   background-color: var(--vp-custom-block-danger-bg);
 }
 
-.vp-doc .docs-box-yellow {
-  background-color: var(--vp-custom-block-warning-bg);
+/**
+ * Collapsible colored containers
+ * Styled like VitePress's original details block
+ * -------------------------------------------------------------------------- */
+
+.vp-doc .docs-collapse {
+  --collapse-accent: var(--vp-c-text-2);
+  --collapse-bg: var(--vp-c-bg-soft);
+
+  margin: 16px 0;
+  padding: 1px 16px;
+
+  border: 0;
+  border-radius: 10px;
+
+  background-color: var(--collapse-bg);
+  color: var(--vp-c-text-1);
+}
+
+.vp-doc .docs-collapse > summary {
+  display: block;
+  position: relative;
+
+  padding-left: 20px;
+
+  color: var(--collapse-accent);
+  font-weight: 700;
+  line-height: 24px;
+
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+
+.vp-doc .docs-collapse > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Triangle marker, like the old VitePress details block */
+.vp-doc .docs-collapse > summary::before {
+  content: "";
+
+  position: absolute;
+  top: 7px;
+  left: 0;
+
+  width: 0;
+  height: 0;
+
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid currentColor;
+
+  transition: transform 0.18s ease;
+  transform-origin: 40% 50%;
+}
+
+.vp-doc .docs-collapse[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.vp-doc .docs-collapse__content {
+  padding: 10px 0px;
+  color: var(--vp-c-text-1);
+}
+
+.vp-doc .docs-collapse__content > :first-child {
+  margin-top: 0;
+}
+
+.vp-doc .docs-collapse__content > :last-child {
+  margin-bottom: 0;
+}
+
+/* Neutral */
+.vp-doc .docs-collapse-neutral {
+  --collapse-accent: var(--vp-c-text-2);
+  --collapse-bg: var(--vp-c-bg-soft);
+}
+
+/* Blue / Info */
+.vp-doc .docs-collapse-info {
+  --collapse-accent: #1d4ed8;
+  --collapse-bg: var(--vp-custom-block-info-bg);
+}
+
+/* Green / Tip */
+.vp-doc .docs-collapse-tip {
+  --collapse-accent: #15803d;
+  --collapse-bg: var(--vp-custom-block-tip-bg);
+}
+
+/* Yellow / Warning */
+.vp-doc .docs-collapse-warning {
+  --collapse-accent: #8a5200;
+  --collapse-bg: var(--vp-custom-block-warning-bg);
+}
+
+/* Red / Danger */
+.vp-doc .docs-collapse-danger {
+  --collapse-accent: #b91c1c;
+  --collapse-bg: var(--vp-custom-block-danger-bg);
+}
+
+/* Purple / Details */
+.vp-doc .docs-collapse-details {
+  --collapse-accent: #6d28d9;
+  --collapse-bg: var(--vp-custom-block-details-bg);
+}
+
+/* Amber / Brand */
+.vp-doc .docs-collapse-brand {
+  --collapse-accent: #8a5200;
+  --collapse-bg: var(--vp-c-brand-soft);
+}
+
+/* Dark-mode title colors */
+.dark .vp-doc .docs-collapse-info {
+  --collapse-accent: #60a5fa;
+}
+
+.dark .vp-doc .docs-collapse-tip {
+  --collapse-accent: #4ade80;
+}
+
+.dark .vp-doc .docs-collapse-warning,
+.dark .vp-doc .docs-collapse-brand {
+  --collapse-accent: #ffca28;
+}
+
+.dark .vp-doc .docs-collapse-danger {
+  --collapse-accent: #f87171;
+}
+
+.dark .vp-doc .docs-collapse-details {
+  --collapse-accent: #c084fc;
 }
 
 
